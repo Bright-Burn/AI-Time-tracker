@@ -28,7 +28,8 @@ app.post('/api/tasks', (req, res) => {
       estimatedTime: Number(estimatedTime),
       status: 'pending',
       createdAt: new Date(),
-      completedAt: null
+      completedAt: null,
+      actualTime: 0
     };
 
     tasks.push(newTask);
@@ -86,6 +87,27 @@ app.patch('/api/tasks/:id/finish', (req, res) => {
     task.status = 'completed';
     task.actualTime = Number(actualTime);
     task.completedAt = new Date();
+    res.json(task);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Отменить выполнение задачи (вернуть в pending)
+app.patch('/api/tasks/:id/cancel', (req, res) => {
+  try {
+    const taskId = req.params.id;
+    const task = tasks.find(t => t.id === taskId);
+
+    if (!task) {
+      return res.status(404).json({ error: 'Task not found' });
+    }
+
+    if (task.status !== 'in-progress') {
+      return res.status(400).json({ error: 'Task is not in progress' });
+    }
+
+    task.status = 'pending';
     res.json(task);
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });

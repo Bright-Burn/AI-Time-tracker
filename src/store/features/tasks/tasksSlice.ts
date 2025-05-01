@@ -11,18 +11,20 @@ const tasksSlice = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    addTask: (state, action: PayloadAction<{
+    addTask: (state, action: PayloadAction<Partial<Task> & {
       title: string;
-      estimatedTime: number;
-      description?: string;
-      category?: string;
       priority: Priority;
+      estimatedTime: number;
     }>) => {
       const newTask: Task = {
-        ...action.payload,
         id: Date.now().toString(),
         status: 'pending',
         createdAt: new Date(),
+        actualTime: 0,
+        completedAt: undefined,
+        description: '',
+        category: '',
+        ...action.payload, // Переданные значения перезапишут значения по умолчанию
       };
       state.tasks.push(newTask);
     },
@@ -30,6 +32,12 @@ const tasksSlice = createSlice({
       const task = state.tasks.find(t => t.id === action.payload);
       if (task) {
         task.status = 'in-progress';
+      }
+    },
+    cancelTask: (state, action: PayloadAction<string>) => {
+      const task = state.tasks.find(t => t.id === action.payload);
+      if (task) {
+        task.status = 'pending';
       }
     },
     completeTask: (state, action: PayloadAction<{ id: string; actualTime: number }>) => {
@@ -55,5 +63,5 @@ const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, startTask, completeTask, deleteTask, setLoading, setError, setTasks  } = tasksSlice.actions;
+export const { addTask, startTask, completeTask, deleteTask, setLoading, setError, setTasks, cancelTask   } = tasksSlice.actions;
 export default tasksSlice.reducer;

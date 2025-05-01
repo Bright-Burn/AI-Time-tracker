@@ -1,18 +1,14 @@
-import React, { useEffect } from 'react';
+// src/AppContent.tsx
+import React from 'react';
 import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
 import { Layout } from '@consta/uikit/Layout';
 import { TaskForm } from './components/TaskForm/TaskForm';
 import { TaskList } from './components/TaskList/TaskList';
-import { fetchTasks } from './store/features/tasks/tasksService';
-import { useAppDispatch } from './store/hooks';
+import {useTasks} from './hooks/useTasks'
+
 
 export const AppContent: React.FC = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchTasks());
-  }, [dispatch]);
-
+  const ta = useTasks()
   return (
     <Theme preset={presetGpnDefault}>
       <Layout direction="column" style={{ minHeight: '100vh' }}>
