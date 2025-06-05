@@ -1,0 +1,16 @@
+{
+    "id": "US-003",
+    "title": "Настройка ESLint для проекта",
+    "role": "Разработчик",
+    "action": "настроить ESLint",
+    "goal": "обеспечить соблюдение стандартов кодирования",
+    "description": "Как разработчик, я хочу настроить ESLint для проекта, чтобы обеспечить соблюдение стандартов кодирования",
+    "priority": "Средний",
+    "type": "НФТ",
+    "acceptance_criteria": "1. ESLint должен быть интегрирован в проект\n2. Конфигурация ESLint должна соответствовать принятым стандартам кодирования\n3. Все новые коммиты должны проходить проверку ESLint",
+    "related_requirements": "NFT-001",
+    "functional_requirements": "",
+    "non_functional_requirements": "NFT-001: Соблюдение стандартов кодирования",
+    "dependencies": "",
+    "additional_conditions": ""
+}
