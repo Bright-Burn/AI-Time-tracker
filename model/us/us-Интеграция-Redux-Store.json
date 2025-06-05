@@ -1,0 +1,16 @@
+{
+    "id": "US-004",
+    "title": "Интеграция Redux Store",
+    "role": "Разработчик",
+    "action": "интегрировать Redux Store",
+    "goal": "управлять состоянием приложения эффективно",
+    "description": "Как разработчик, я хочу интегрировать Redux Store в приложение, чтобы управлять состоянием приложения эффективно",
+    "priority": "Высокий",
+    "type": "ФТ",
+    "acceptance_criteria": "1. Redux Store должен быть интегрирован в приложение\n2. Состояние приложения должно управляться через Redux Store\n3. Все компоненты должны иметь доступ к состоянию",
+    "related_requirements": "FT-002",
+    "functional_requirements": "FT-002: Управление состоянием приложения",
+    "non_functional_requirements": "",
+    "dependencies": "",
+    "additional_conditions": ""
+}
