@@ -1,0 +1,16 @@
+{
+    "id": "US-005",
+    "title": "Добавление Fast Refresh",
+    "role": "Разработчик",
+    "action": "добавить поддержку Fast Refresh",
+    "goal": "ускорить процесс разработки",
+    "description": "Как разработчик, я хочу добавить поддержку Fast Refresh в проект, чтобы ускорить процесс разработки",
+    "priority": "Средний",
+    "type": "НФТ",
+    "acceptance_criteria": "1. Fast Refresh должен быть интегрирован в проект\n2. Изменения в коде должны автоматически отображаться без полной перезагрузки страницы\n3. Процесс разработки должен быть ускорен",
+    "related_requirements": "NFT-002",
+    "functional_requirements": "",
+    "non_functional_requirements": "NFT-002: Ускорение процесса разработки",
+    "dependencies": "",
+    "additional_conditions": ""
+}
