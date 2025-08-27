@@ -13,7 +13,6 @@ export const TaskList: React.FC = () => {
     error
   } = useTaskList();
 
-  if (loading) return <Text>Загрузка...</Text>;
   if (error) return <Text view="alert">{error}</Text>;
 
   return (

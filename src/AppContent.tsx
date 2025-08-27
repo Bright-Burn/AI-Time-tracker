@@ -9,9 +9,12 @@ import {useTasks} from './hooks/useTasks'
 
 export const AppContent: React.FC = () => {
   const ta = useTasks()
+
+  const a = 2 as string
   return (
     <Theme preset={presetGpnDefault}>
       <Layout direction="column" style={{ minHeight: '100vh' }}>
+        
         <Layout style={{ padding: '24px' }}>
           <Layout direction="column" flex={1}>
             <TaskForm />

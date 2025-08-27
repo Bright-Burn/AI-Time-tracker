@@ -10,7 +10,7 @@ interface ISelectItem {
 const PRIORITY_OPTIONS: ISelectItem[] = [
   { label: 'Низкий', value: 'low', id: 'low' },
   { label: 'Средний', value: 'medium', id: 'medium' },
-  { label: 'Высокий', value: 'high', id: 'high' },
+  { label: 'Высакий', value: 'high', id: 'high' },
 ];
 
 export const useTaskForm = () => {
@@ -24,7 +24,8 @@ export const useTaskForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { createTask } = useTaskActions();
-
+  const a: number! 
+  a= 'a'
   const isFormValid = Boolean(
     formData.title && 
     formData.estimatedTime && 
